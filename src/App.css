@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+/* Reset default list styles */
+.nav-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;              /* horizontal layout */
+  justify-content: flex-start; /* align items to the left */
+  background-color: skyblue;     /* dark background */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Each list item */
+.nav-ul li {
+  padding: 14px 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Links inside the nav */
+.nav-ul li a {
+  text-decoration: none;      /* remove underline */
+  color: white;               /* text color */
+  font-weight: 500;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Hover effect */
+
+/* Optional: make nav fixed at top */
+.nav-ul {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.profile-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  height: 100vh;             /* full viewport height */
+}
+
+
+.footer {
+  background-color: skyblue;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  text-align: center;
+  padding: 1px;
+  position: fixed;   /* keeps footer at bottom */
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
 }
