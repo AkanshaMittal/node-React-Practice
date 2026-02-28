@@ -8,6 +8,7 @@ import UpdateProduct from './UpdateProduct';
 import Logout from './Logout';
 import Profile from './Profile';
 import Footer from './Footer';
+import SignUp from './SignUp';
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,7 @@ function App() {
           <Route path="/Update" element={<UpdateProduct />} />
           <Route path="/Logout" element={<Logout />} />
           <Route path="/Profile" element={<Profile />} />
+          <Route path="/SignUp" element={<SignUp />} />
         </Routes>
 
       </BrowserRouter>

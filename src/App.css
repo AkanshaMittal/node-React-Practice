@@ -32,10 +32,33 @@
 }
 .profile-container {
   display: flex;
-  justify-content: center;   /* horizontal center */
-  align-items: center;       /* vertical center */
-  height: 100vh;             /* full viewport height */
+  flex-direction: column;   /* stack inputs vertically */
+  justify-content: center;  /* vertical center */
+  align-items: center;      /* horizontal center */
+  height: 100vh;            /* full viewport height */
 }
+
+.inputBox {
+  margin: 10px 0;           /* spacing between inputs */
+  padding: 8px;
+  width: 300px;
+  border: 2px solid skyblue;
+}
+.submitBtn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  width: 314px;
+  background-color: skyblue; /* green */
+  color: white;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  background-color:rgb(86, 188, 229);
+}
+
 
 
 .footer {
