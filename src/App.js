@@ -9,12 +9,14 @@ import Logout from './Logout';
 import Profile from './Profile';
 import Footer from './Footer';
 import SignUp from './SignUp';
+import PrivateComponent from './PrivateComponent';
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
        <NavBar/>
        <Routes>
+        <Route element={PrivateComponent}/>
           <Route path="/" element={<Home />} />
           <Route path="/Add" element={<AddProduct />} />
           <Route path="/Update" element={<UpdateProduct />} />
@@ -22,6 +24,7 @@ function App() {
           <Route path="/Profile" element={<Profile />} />
           <Route path="/SignUp" element={<SignUp />} />
         </Routes>
+        
 
       </BrowserRouter>
       <Footer/>

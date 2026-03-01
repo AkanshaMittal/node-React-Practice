@@ -1,16 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 const NavBar=()=>{
+      const auth= localStorage.getItem('user');
+
+      const navigate = useNavigate();
+      const Logout=()=>{
+        localStorage.clear();
+        navigate("/SignUp");
+        console.log("User logout");
+      }
     return(
         <div>
-        <ul className='nav-ul'>
-            <li><Link to ="/">Home</Link></li>
-            <li><Link to ="/Add">Add Product</Link></li>
-            <li><Link to ="/Update">UpdateProduct</Link></li>
-            <li><Link to ="/Logout">Logout </Link></li>
-            <li><Link to ="/Profile">Profile</Link></li>
-            <li><Link to ="/SignUp">SignUp</Link></li>
-        </ul>
+          <ul className='nav-ul'>
+            <li><Link to='/'>Products</Link></li>
+             <li><Link to="/add">Add Products</Link></li>
+              <li><Link to="/update">Update Products</Link></li>
+               <li><Link to="/profile">Profile</Link></li>
+               <li>{auth?<Link onClick={Logout} to="/SignUp">Logout</Link>:
+                <Link to='/SignUp'>SignUp</Link>}</li>
+          </ul>
     </div>
     )
 }
