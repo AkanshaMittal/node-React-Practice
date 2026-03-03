@@ -30,6 +30,14 @@
   width: 100%;
   z-index: 1000;
 }
+/* right-aligned navigation when not authenticated */
+.nav-ul.nav-right {
+  justify-content: flex-end; /* push items to the right using flexbox */
+}
+.nav-right {
+  /* fallback for non-flex contexts */
+  text-align: right;
+}
 .profile-container {
   display: flex;
   flex-direction: column;   /* stack inputs vertically */

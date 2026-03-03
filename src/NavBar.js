@@ -9,18 +9,26 @@ const NavBar=()=>{
         navigate("/SignUp");
         console.log("User logout");
       }
-    return(
-        <div>
-          <ul className='nav-ul'>
-            <li><Link to='/'>Products</Link></li>
-             <li><Link to="/add">Add Products</Link></li>
-              <li><Link to="/update">Update Products</Link></li>
-               <li><Link to="/profile">Profile</Link></li>
-               <li>{auth?<Link onClick={Logout} to="/SignUp">Logout</Link>:
-                <Link to='/SignUp'>SignUp</Link>}</li>
-          </ul>
+   return (
+    <div>
+      {auth ? (
+        <ul className='nav-ul'>
+          <li><Link to="/">Products</Link></li>
+          <li><Link to="/add">Add Products</Link></li>
+          <li><Link to="/update">Update Products</Link></li>
+          <li><Link to="/profile">Profile</Link></li>
+          <li><Link onClick={Logout}>Logout</Link></li>
+        </ul>
+      ) : (
+        <ul className='nav-ul nav-right'>
+          <li><Link to="/signup">Sign Up</Link></li>
+          <li><Link to="/login">Login</Link></li>
+        </ul>
+      )}
     </div>
-    )
-}
+  );
+};
+
+
 
 export default NavBar

@@ -10,19 +10,21 @@ import Profile from './Profile';
 import Footer from './Footer';
 import SignUp from './SignUp';
 import PrivateComponent from './PrivateComponent';
+import Login from './Login';
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
        <NavBar/>
        <Routes>
-        <Route element={PrivateComponent}/>
+        <Route element={<PrivateComponent/>}/>
           <Route path="/" element={<Home />} />
           <Route path="/Add" element={<AddProduct />} />
           <Route path="/Update" element={<UpdateProduct />} />
           <Route path="/Logout" element={<Logout />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/SignUp" element={<SignUp />} />
+           <Route path="/Login" element={<Login />} />
         </Routes>
         
 
