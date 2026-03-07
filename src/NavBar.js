@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React  from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 const NavBar=()=>{
       const auth= localStorage.getItem('user');
@@ -11,18 +11,23 @@ const NavBar=()=>{
       }
    return (
     <div>
+      
       {auth ? (
         <ul className='nav-ul'>
+          <img 
+  src='https://yt3.googleusercontent.com/ytc/AIdro_lpwLOOTumlQiiMYMHbBgJfQXVyRBGrZdTZ6NbtY-YA8wg=s900-c-k-c0x00ffffff-no-rj' 
+  alt="logo" 
+  className="logo"/>
           <li><Link to="/">Products</Link></li>
           <li><Link to="/add">Add Products</Link></li>
           <li><Link to="/update">Update Products</Link></li>
           <li><Link to="/profile">Profile</Link></li>
-          <li><Link onClick={Logout}>Logout</Link></li>
+          <li><Link onClick={Logout}>Logout({JSON.parse(auth).name})</Link></li>
         </ul>
       ) : (
         <ul className='nav-ul nav-right'>
           <li><Link to="/signup">Sign Up</Link></li>
-          <li><Link to="/login">Login</Link></li>
+          <li><Link to="/login"> Login</Link></li>
         </ul>
       )}
     </div>

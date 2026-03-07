@@ -79,3 +79,15 @@
   width: 100%;
   font-size: 14px;
 }
+.logo{
+  width: 42px;
+  height: 36px;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+.validation{
+  margin-left: -202px;
+    margin-top: -9px;
+    color: red;
+}

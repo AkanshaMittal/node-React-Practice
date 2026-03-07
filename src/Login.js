@@ -9,8 +9,9 @@ export default function Login() {
            const auth= localStorage.getItem('user');
            if(auth)
            {
-              navigate('/');
+               navigate('/');
            }
+           
          })
   const handleLogin = async () => {
     console.log("email password of Login::::::", email, password)
