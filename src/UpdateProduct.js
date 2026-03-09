@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import {useParams} from 'react-router-dom';
 
 const UpdateProduct = () => {
   const [name, setName] = useState("");
@@ -6,8 +7,26 @@ const UpdateProduct = () => {
   const [category, setCategory] = useState("");
   const [company, setCompany] = useState("");
   const [error, setError] = useState(false);
+  const params= useParams();
 
   console.log({ name, price, category, company })
+   
+  const getDetailsUpdation=async()=>{
+    console.log("::::::::Productid::::::",params);
+    let result = await fetch(`http://localhost:5000/product/${params.id}`);
+    result = await result.json();
+    console.log(result);
+    setName(result.name);
+    setPrice(result.price);
+    setCategory(result.category);
+    setCompany(result.company)
+
+  }
+
+
+  useEffect(()=>{
+    getDetailsUpdation();
+  })
   return (
     <div className="profile-container">
       <h1>Update Product</h1>
